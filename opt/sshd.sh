@@ -16,7 +16,7 @@ EOF
   /usr/sbin/sshd -f /app/.ssh/sshd_config -o "Port ${ssh_port}" -o "Banner ${banner_file}"
 
   # Start the tunnel
-  ngrok_cmd="ngrok tcp -log stdout ${NGROK_OPTS} ${ssh_port}"
-  echo "Starting ngrok tunnel"
-  eval "$ngrok_cmd &"
+  # ngrok_cmd="ngrok tcp -log stdout ${NGROK_OPTS} ${ssh_port}"
+  # echo "Starting ngrok tunnel"
+  # eval "$ngrok_cmd &"
 fi
