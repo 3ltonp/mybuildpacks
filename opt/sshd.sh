@@ -3,8 +3,8 @@
 if [ "$DYNO" != *run.* ] && [ "$SSH_ENABLED" = "true" ]; then
   ssh_port=${SSH_PORT:-"2222"}
 
-  if [ -n "$NGROK_API_TOKEN" ]; then
-    NGROK_OPTS="${NGROK_OPTS} --authtoken ${NGROK_API_TOKEN}"
+  if [ -n "$CUSTOM_SSH_KEY" ]; then
+    cat "$CUSTOM_SSH_KEY" > /app/.ssh/id_rsa
   fi
 
   banner_file="/app/.ssh/banner.txt"
